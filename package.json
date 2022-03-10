@@ -1,0 +1,29 @@
+{
+  "name": "tomatosback",
+  "version": "1.0.0",
+  "description": "Tomatos System Preoject",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaytoChan/tomatosBack.git"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaytoChan/tomatosBack/issues"
+  },
+  "homepage": "https://github.com/KaytoChan/tomatosBack#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
