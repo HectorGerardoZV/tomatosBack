@@ -1,12 +1,18 @@
 const express = require("express");
-const { get } = require("express/lib/response");
+const routes = require("./router/routes");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
 const app = express();
+app.use(cors())
 
-get("/", (req, res) => {
-res.send("Hola, te conectaste :D!");
-} );
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
+app.use("/",routes)
 app.listen(1000, () => {
 console.log("Servidor corriendo en el puerto 1000. " );
 });
+
+
 
