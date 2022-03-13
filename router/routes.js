@@ -6,6 +6,6 @@ routes.use(require("./routes/userRouter"));
 routes.use(require("./routes/categoryRouter"));
 routes.use(require("./routes/productRouter"));
 
-module.exports = routes
+module.exports = routes;
 
  
