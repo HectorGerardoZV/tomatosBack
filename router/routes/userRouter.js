@@ -1,16 +1,33 @@
 const express = require("express");
-const userRouter = express.Router()
+const userRouter = express.Router();
 
-userRouter.get("/user",(req,res)=>{
-    const number = Math.random()*100
-    res.json({value: number});
-})
+//----Routes----//
 
-userRouter.post("/user",(req,res)=>{
-    console.log(req.body);
-    res.json(req.body)
-})
+//Add a new user in the db
+userRouter.post("/users",(req,res)=>{
+   
+});
+
+//Query All users in the db
+userRouter.get("/users",(req,res)=>{
+
+});
+
+//Query a specific user by id
+userRouter.get("/users/:id",(req,res)=>{
+
+});
+
+//Update a specific user by id
+userRouter.put("/users/:id",(req,res)=>{
+
+});
+
+//Delete a specific user by id
+userRouter.delete("/users/:ïd",(req,res)=>{
+
+});
 
 
-//http://locahost:1000/user/42342 ejemplo de get("/user/url/:id")
-module.exports = userRouter
+
+module.exports = userRouter;

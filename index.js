@@ -1,9 +1,17 @@
 const express = require("express");
 const routes = require("./router/routes");
 const bodyParser = require("body-parser");
+const db = require("./config/DBConnection");
 const cors = require("cors");
 
+
 const app = express();
+//Connecting whit the database
+db.sync()
+    .then(()=>console.log("Connected with the data base"))
+    .catch(error=>console.log(error))
+
+
 app.use(cors())
 
 app.use(bodyParser.json());
