@@ -1,17 +1,16 @@
 const express = require("express");
 const categoryRouter = express.Router();
+//Controller
+const categoryController= require("../../controller/categoryController");
+
 
 //----Routes----//
 
 //Add a new category
-categoryRouter.post("/categories",(req,res)=>{
-
-});
+categoryRouter.post("/categories",categoryController.addNew);
 
 //Query all categories
-categoryRouter.get("/categories",(req,res)=>{
-
-});
+categoryRouter.get("/categories",categoryController.getAll);
 
 //Query a specific category by id
 categoryRouter.get("/categories/:id",(req,res)=>{

@@ -1,30 +1,24 @@
 const express = require("express");
 const orderRouter = express.Router();
 
-//Add a new order in the db.
-orderRouter.post("/orders",(req,res)=>{
+//Controllers
+const orderController = require("../../controller/orderController");
 
-});
+
+//Add a new order in the db.
+orderRouter.post("/orders",orderController.addNew);
 
 //Query All orders in the db.
-orderRouter.get("/orders",(req,res)=>{
-
-});
+orderRouter.get("/orders",orderController.getAll);
 
 //Query a specific order by id
-orderRouter.get("/orders/:id",(req,res)=>{
-
-});
+orderRouter.get("/orders/:id",orderController.getById);
 
 //Update a specific order by id.
-orderRouter.put("/orders/:id",(req,res)=>{
-
-});
+orderRouter.put("/orders/:id",orderController.update);
 
 //Delete a specific order by id.
-orderRouter.delete("/orders/:ïd",(req,res)=>{
-
-});
+orderRouter.delete("/orders/:ïd",orderController.delete);
 
 
 
