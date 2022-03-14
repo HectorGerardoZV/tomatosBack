@@ -15,9 +15,9 @@ const Category = db.define("category",{
 });
 
 //Model
-const Producto = require("./Product");
+const Product = require("./Product");
 
-Category.hasMany(Producto,{
+Category.hasMany(Product,{
     foreignKey:"category"
 });
 module.exports = Category;
