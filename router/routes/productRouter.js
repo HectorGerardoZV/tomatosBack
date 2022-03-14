@@ -20,7 +20,6 @@ productRouter.get("/products/category/:category",productController.getByCategory
 productRouter.put("/products/:id",(req,res)=>{
 
 });
-
 //Delete a specific product by id.
 productRouter.delete("/products/:ïd",(req,res)=>{
 
