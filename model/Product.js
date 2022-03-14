@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 const db = require("../config/DBConnection");
 
-const Producto = db.define("product",{
+const Product = db.define("product",{
     id:{
         type: sequelize.INTEGER,
         primaryKey:true,
@@ -31,4 +31,15 @@ const Producto = db.define("product",{
     
 });
 
-module.exports = Producto;
+//Model
+const PackageProduct = require("./PackageProduct");
+
+Product.hasMany(PackageProduct,{
+    foreignKey:"product"
+});
+
+module.exports = Product;
+
+
+
+
