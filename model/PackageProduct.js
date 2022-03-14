@@ -3,7 +3,6 @@ const db = require("../config/DBConnection")
 const PackageProduct = db.define("packageProduct",{
     
     id: {
-
        type:sequelize.INTEGER,
        primaryKey: true,
        autoIncrement: true,
@@ -11,20 +10,16 @@ const PackageProduct = db.define("packageProduct",{
        
     },
     product:{
-
         type:sequelize.INTEGER,
         allowNull:false
         
     },
 
     quantity:{
-
         type:sequelize.INTEGER,
         allowNull:false
 
     }
-
-
 
 })
 

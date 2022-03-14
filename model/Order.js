@@ -8,9 +8,12 @@ const Order = db.define("order",{
         allowNull: false,
         unique: true
     },
+    user:{
+        type: sequelize.INTEGER,
+        allowNull:false
+    },
     client: {
         type: sequelize.STRING(100),
-
     },
     description: {
         type: sequelize.TEXT
@@ -27,5 +30,13 @@ const Order = db.define("order",{
     }
 
 });
+
+//Model
+const PackageProduct = require("./PackageProduct");
+const RelProductOrder = require("./RelProductOrder");
+
+Order.belongsToMany(PackageProduct,{
+    through:RelProductOrder
+})
 
 module.exports = Order;
