@@ -8,4 +8,5 @@ exports.importModels = ()=>{
     require("./Promotion");
     require("./RelProductPromotion");
     require("./RelProductOrder");
+    require("./RelPromotionOrder");
 }

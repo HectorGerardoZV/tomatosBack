@@ -9,7 +9,7 @@ const RelProductOrder = db.define("relProductOrder",{
         autoIncrement:true,
         unique:true
     },
-    productPackageId: {
+    packageProductId: {
         type: sequelize.INTEGER,
         allowNull:false
     },
