@@ -1,6 +1,9 @@
 const express = require("express");
 const promotionRouter = express.Router();
 
+//Controller
+
+
 //Add a new promotion in the db.
 promotionRouter.post("/promotions",(req,res)=>{
 

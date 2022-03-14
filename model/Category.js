@@ -10,7 +10,8 @@ const Category = db.define("category",{
     },
     name:{
         type: sequelize.STRING,
-        allowNull:true
+        allowNull:true,
+        unique:true
     }
 });
 
@@ -18,6 +19,8 @@ const Category = db.define("category",{
 const Product = require("./Product");
 
 Category.hasMany(Product,{
-    foreignKey:"category"
+    foreignKey:"category",
+    onDelete: "cascade",
+    hooks:true
 });
 module.exports = Category;

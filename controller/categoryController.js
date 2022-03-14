@@ -6,8 +6,8 @@ exports.addNew = async(req,res)=>{
         const {name} = body;
         
         const category = await Cateogry.create({name});
-        console.log(category);
-        res.status(200).json({msg: "Category created"});
+        const categoryObject = (category.dataValues);
+        res.status(200).json(categoryObject);
     } catch (error) {
         
     }
@@ -40,8 +40,14 @@ exports.update = async(req,res)=>{
 
 exports.delete = async(req,res)=>{
     try {
-        
+        const {id} = req.params;
+        await Cateogry.destroy({
+            where:{
+                id:id
+            }
+        });
+        res.status(200).json({msg: "Deleted"});
     } catch (error) {
-        
+        res.status(500).json({msg: "Error while deleting"});
     }
 }

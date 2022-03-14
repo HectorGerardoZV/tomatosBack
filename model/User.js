@@ -14,7 +14,8 @@ const User = db.define("user",{
     },
     accessKey:{
         type: sequelize.STRING(100),
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     password:{
         type: sequelize.STRING,
