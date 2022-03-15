@@ -13,12 +13,11 @@ exports.addNew = async(req,res)=>{
         date = Date.now();
 
         const orderObj = await Order.create({user,client, description, total, date, state});
-        let orderId = -1;
+        let orderId = orderObj.dataValues.id;
         packageProduct.forEach(async package=>{
             const {product,quantity} = package;
             const packageObj = await PackageProduct.create({product,quantity});
-            const packageId = packageObj.dataValues.id
-            orderId = orderObj.dataValues.id; 
+            const packageId = packageObj.dataValues.id;
 
             await RelProductOrder.create({
                 packageProductId: packageId,
@@ -38,15 +37,21 @@ exports.getAll = async(req,res)=>{
         const orders = await Order.findAll({});
         res.status(200).json(orders);
     } catch (error) {
-        
+        console.log(error);
     }
 }
 
 exports.getById = async(req,res)=>{
     try {
-        
+        const {id} = req.params;
+        const order = await Order.findOne({
+            where:{
+                id:id
+            }
+        });
+        res.status(200).json(order);
     } catch (error) {
-        
+        console.log(error);
     }
 }
 
