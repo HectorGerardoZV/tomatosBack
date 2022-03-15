@@ -36,7 +36,9 @@ const PackageProduct = require("./PackageProduct");
 const RelProductOrder = require("./RelProductOrder");
 
 Order.belongsToMany(PackageProduct,{
-    through:RelProductOrder
+    through:RelProductOrder,
+    onDelete: "cascade",
+    hooks:true
 })
 
 module.exports = Order;

@@ -57,7 +57,24 @@ exports.getById = async(req,res)=>{
 
 exports.update = async(req,res)=>{
     try {
-        
+        const {body} = req;
+        const {id} = req.params;
+        const [order, packageProduct] = body;
+        let {client, description, total, date, state} = order;
+        await Order.update(
+            {
+                client: client,
+                description: description,
+                total: total,
+                state:state
+            },
+            {
+                where:{
+                    id:id
+                }
+            }
+        );
+        res.status(200).json({msg: "Order updated"});
     } catch (error) {
         
     }
@@ -65,8 +82,14 @@ exports.update = async(req,res)=>{
 
 exports.delete = async(req,res)=>{
     try {
-        
+        const {id} = req.params;
+        await Order.destroy({
+            where:{
+                id:id
+            }
+        });
+        res.status(200).json({msg: "Order deleted"});
     } catch (error) {
-        
+        console.log(error);
     }
 }
