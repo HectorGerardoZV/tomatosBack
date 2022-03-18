@@ -27,6 +27,7 @@ const User = db.define("user",{
     },
     registered : {
         type: sequelize.DATE,
+        defaultValue: Date.now(),
         allowNull: false
     }
 });
