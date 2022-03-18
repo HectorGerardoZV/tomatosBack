@@ -28,7 +28,7 @@ exports.addNew = async(req,res)=>{
         res.status(200).json({msg: "Order Added"});
         
     } catch (error) {
-        console.log(error);
+        res.status(500).json({msg: "Error, this product doesn't exist"});
     }
 }
 
