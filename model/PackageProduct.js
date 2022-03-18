@@ -23,7 +23,7 @@ const PackageProduct = db.define("packageProduct",{
         type: sequelize.TEXT,
     },
     total: {
-        type: sequelize.INTEGER,
+        type: sequelize.FLOAT,
         allowNull: false
     }
 
