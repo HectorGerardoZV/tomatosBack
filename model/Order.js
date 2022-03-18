@@ -22,7 +22,8 @@ const Order = db.define("order",{
         type: sequelize.FLOAT(100,4)
     },
     date: {
-        type: sequelize.DATE
+        type: sequelize.DATE,
+        defaultValue: Date.now()
     },
     state:{
         type: sequelize.STRING,

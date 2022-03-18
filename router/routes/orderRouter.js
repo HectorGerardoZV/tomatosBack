@@ -3,10 +3,11 @@ const orderRouter = express.Router();
 
 //Controllers
 const orderController = require("../../controller/orderController");
-
-
+//Business Workers
+const orderBusiness = require("../../middleware/business/orderBusiness");
+const {newOrderStep1,newOrderStep2} = orderBusiness;
 //Add a new order in the db.
-orderRouter.post("/orders",orderController.addNew);
+orderRouter.post("/orders",newOrderStep1,newOrderStep2,orderController.addNew);
 
 //Query All orders in the db.
 orderRouter.get("/orders",orderController.getAll);
