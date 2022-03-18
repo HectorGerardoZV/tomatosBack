@@ -18,7 +18,13 @@ const PackageProduct = db.define("packageProduct",{
     quantity:{
         type:sequelize.INTEGER,
         allowNull:false
-
+    },
+    details: {
+        type: sequelize.TEXT,
+    },
+    total: {
+        type: sequelize.INTEGER,
+        allowNull: false
     }
 
 })

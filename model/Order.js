@@ -15,9 +15,6 @@ const Order = db.define("order",{
     client: {
         type: sequelize.STRING(100),
     },
-    description: {
-        type: sequelize.TEXT
-    },
     total:{
         type: sequelize.FLOAT(100,4)
     },

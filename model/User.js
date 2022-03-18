@@ -24,6 +24,10 @@ const User = db.define("user",{
     position:{
         type: sequelize.INTEGER,
         allowNull:false
+    },
+    registered : {
+        type: sequelize.DATE,
+        allowNull: false
     }
 });
 
