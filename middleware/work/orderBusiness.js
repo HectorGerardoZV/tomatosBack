@@ -8,8 +8,8 @@ exports.newOrderStep1 = async(req,res,next)=>{
         const packageProduct= body[1];
 
         let idsPackages = packageProduct.map( async package=>{
-            const {product,quantity} = package;
-            const packageObj = await PackageProduct.create({product,quantity});
+            const {product,quantity,details,total} = package;
+            const packageObj = await PackageProduct.create({product,quantity,details,total});
             const id = packageObj.dataValues.id;
             return id;
             
