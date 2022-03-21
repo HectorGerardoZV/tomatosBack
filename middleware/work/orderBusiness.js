@@ -37,7 +37,7 @@ exports.newOrderStep2 = async(req,res,next)=>{
         req.orderId = orderId;
         next();
     } catch (error) {
-        
+        res.status(500).json({msg: "Errror while creating the order"});
     }
 }
 

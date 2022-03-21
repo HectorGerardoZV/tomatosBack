@@ -4,7 +4,6 @@ const productRouter = express.Router();
 const productController = require("../../controller/productController");
 
 //----Routes----//
-
 //Add a new product in the db.
 productRouter.post("/products",productController.addNew);
 

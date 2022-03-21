@@ -12,6 +12,9 @@ orderRouter.post("/orders",newOrderStep1,newOrderStep2,orderController.addNew);
 //Query All orders in the db.
 orderRouter.get("/orders",orderController.getAll);
 
+//Query all order by specific state
+orderRouter.get("/orders/state/:state",orderController.getByState);
+
 //Query a specific order by id
 orderRouter.get("/orders/:id",orderController.getById);
 
