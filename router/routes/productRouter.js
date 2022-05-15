@@ -20,7 +20,7 @@ productRouter.get("/products/category/:category",productController.getByCategory
 productRouter.put("/products/:id",productController.update);
 
 //Delete a specific product by id.
-productRouter.delete("/products/:ïd",productController.delete);
+productRouter.delete("/products/:id",productController.delete);
 
 module.exports = productRouter;
 
