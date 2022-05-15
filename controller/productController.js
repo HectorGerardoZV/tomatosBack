@@ -1,4 +1,5 @@
 //Model
+
 const Product = require("../model/Product");
 exports.addNew = async(req,res)=>{
     try {
@@ -15,7 +16,7 @@ exports.addNew = async(req,res)=>{
             }
             );
         console.log(product);
-        res.status(200).json({msg: "Product created"});
+        res.status(200).json(product);
     } catch (error) {
         
     }
@@ -54,15 +55,39 @@ exports.getByCategory = async(req,res)=>{
 
 exports.update = async(req,res)=>{
     try {
-        
+        const {body} = req;
+        const {id} = req.params;
+        let {name, basePrice, salePrice, description, category} = body;
+
+        const productUpdated = await Product.update(
+            {
+                name: name,
+                basePrice: basePrice,
+                salePrice: salePrice,
+                description:description,
+                category:category
+            },
+            {
+                where:{
+                    id:id
+                }
+                ,returning:true,
+                plain: true
+            }
+        );
+        res.json(productUpdated[1]);
     } catch (error) {
-        
+        res.json({msg: "Error while updating this product"});
     }
 }
 
 exports.delete = async(req,res)=>{
     try {
+        const id = req.params.id;
         
+        const deleteProduct = await Product.destroy({ where: { id:id } });
+
+        res.json({msg: "Product deleted. "});
     } catch (error) {
         
     }
